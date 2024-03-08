@@ -24,5 +24,9 @@ private final CustomerService customerService;
     public Customer getCustomerByID(@PathVariable("id") long id){
      return customerService.getCustomerFingById(id);
   }
+  @PutMapping("{id}")
+    public String updateFirstName(@PathVariable long id,@RequestBody Customer customer){
+    return customerService.updateFirstName(id,customer);
+}
 
 }

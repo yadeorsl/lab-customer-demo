@@ -31,4 +31,15 @@ public class CustomerService {
            return null;
        }
     }
+
+    public String updateFirstName(long id, Customer customer) {
+       Optional<Customer> customerOptional= customerRepository.findById(id);
+        if (customerOptional.isPresent()){
+            Customer oldCustomer=customerOptional.get();
+            oldCustomer.setFirstName(customer.getFirstName());
+            customerRepository.save(oldCustomer);
+            return "islem basarili";
+        }
+        return null;
+    }
 }
