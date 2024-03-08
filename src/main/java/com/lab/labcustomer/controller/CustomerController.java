@@ -28,5 +28,9 @@ private final CustomerService customerService;
     public String updateFirstName(@PathVariable long id,@RequestBody Customer customer){
     return customerService.updateFirstName(id,customer);
 }
+@DeleteMapping("{id}")
+    public void deleteCustomerById(@PathVariable long id){
+    customerService.deleteCustomerById(id);
+}
 
 }
